@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cover"></div>
+    <div class="hotel">
+        <div class="p"></div>
+        <div class="logo">
+            <div class="lo"></div>
+            <span>WIFI logo</span>
+        </div>
+        <form action="#">
+            <span id="ist">Username</span>
+            <input type="text" name="text" id="txt">
+
+            <span id="second">Password</span>
+            <input type="password" name="password" id="pwrd">
+            <p id="put"></p>
+            <p id="demo"></p>
+
+            <input type="submit" value="Enter" id="sub">
+        </form>
+
+        <div class="line">
+            <div class="codes"></div>
+            <div class="Nano"></div>
+        </div> 
+    </div>
+    <script>
+       let first = document.getElementById('txt');
+        let second = document.getElementById('pwrd');
+        let tag = document.getElementById('demo');
+        let sub = document.getElementById('sub');
+        let form = document.querySelector('form');
+        let get = document.getElementById('put')
+
+        sub.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the default form submission
+            console.log(second.value)
+            if (first.value === "" && second.value === "") {
+                get.innerText = 'Both input fields must not be empty';
+                get.style.color = 'red'
+            }
+            else if (second.value.length<8) {
+                tag.innerText = 'Password must not be less than 8 characters';
+                tag.style.color = 'red'
+            }
+            else{
+                window.location.href = 'https://www.nanocodes.com.ng/'
+            }
+        });
+
+    </script>
+</body>
+</html>
